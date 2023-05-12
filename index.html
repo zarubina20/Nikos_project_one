@@ -71,13 +71,93 @@
                     <a class="active" href="#">UA</a>
                     <a href="#">EN</a>
                 </div>
-                <div class="header__burger-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <img id="burgerMenu" class="header__burger-menu" src="./img/7124209_menu_icon.svg" alt="menu">
             </div>
         </header>
+
+        <div class="mobile-bcg"></div>
+        <div id="mobileMenu" class="mobile-menu">
+          <div class="mobile-menu__content">
+            <img id="close_mobile" class="mobile-menu__close" src="./img/close_x_icon.svg" alt="close">
+            <nav class="mobile-menu__navigation">
+              <ul>
+                <li class="mobile-menu__main-menu">
+                  <div class="mobile-menu__link-wrap">
+                    <a class="mobile-menu__link" href="">ПРО ІНСТИТУТ</a>
+                    <img id="arrowAboutInstitut" class="mobile-menu__arrow" src="./img/arrow_down_icon.svg" alt="arrow">
+                  </div>
+                  <ul id="subMenuInstitute" class="mobile-menu__sub-menu">
+                    <li>
+                      <a href="">Напрями досліджень</a>
+                    </li>
+                    <li>
+                      <a href="">Наукові школи</a>
+                    </li>
+                    <li>
+                      <a href="">Керівництво</a>
+                    </li>
+                    <li>
+                      <a href="">Наукові ради</a>
+                    </li>
+                    <li>
+                      <a href="">Структура</a>
+                    </li>
+                    <li>
+                      <a href="">Історія інституту</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="mobile-menu__main-menu">
+                  <div class="mobile-menu__link-wrap">
+                    <a class="mobile-menu__link" href="">ДІЯЛЬНІСТЬ</a>
+                  </div>
+                </li>
+                <li class="mobile-menu__main-menu">
+                  <div class="mobile-menu__link-wrap">
+                    <a class="mobile-menu__link" href="">ВИДАННЯ</a>
+                    <img id="arrowEdition" class="mobile-menu__arrow" src="./img/arrow_down_icon.svg" alt="arrow">
+                  </div>
+                  <ul id="subMenuEdition" class="mobile-menu__sub-menu">
+                    <li>
+                      <a href="">Монографії</a>
+                    </li>
+                    <li>
+                      <a href="">Наукові доповіді</a>
+                    </li>
+                    <li>
+                      <a href="">Збірники наукових праць</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="mobile-menu__main-menu">
+                  <div class="mobile-menu__link-wrap">
+                    <a class="mobile-menu__link" href="">ПІДГОТОВКА КАДРІВ</a>
+                    <img id="arrowPreparation" class="mobile-menu__arrow" src="./img/arrow_down_icon.svg" alt="arrow">
+                  </div>
+                  <ul id="subMenuPreparation" class="mobile-menu__sub-menu">
+                    <li>
+                      <a href="">Аспірантура</a>
+                    </li>
+                    <li>
+                      <a href="">Докторантура</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="mobile-menu__language">
+                <a class="header__language-link <?= $_SESSION['language'] == 'uk' ? 'active' : '' ?>"
+                  href="<?= SITE_URL_UK ?>">
+                  UA
+                </a>
+                <a class="header__language-link <?= $_SESSION['language'] == 'en' ? 'active' : '' ?>"
+                  href="<?= SITE_URL_EN ?>">
+                  EN
+                </a>
+              </div>
+            </nav>
+          </div>
+        </div>
+
         <main>
             <section clas="slider_block">
                 <div class="wrapper">
@@ -100,6 +180,7 @@
                     </div>
                     <div class="img img-5">
                       <img src="./img/image 9.jpg" alt="">
+                      <a href="#">Всі новини</a>
                     </div>
                     <div class="sliders">
                       <label for="one" class="one"></label>
@@ -135,16 +216,24 @@
                 </div>
                 <div class="projects_container">
                     <div class="projects_container_card">
-                        1
+                        <div class="forecast"><span>Прогноз на квартал</span></div>
+                        <img class="forecast_block" src="./img/Прогноз 1.svg" alt="">
                     </div>
                     <div class="projects_container_card">
-                        2
+                        <div class="forecast_two"><span>Міжнародний проєкт Erasmus+ CBHE action 
+                          “Structuring Cooperationin Doctoral Research, 
+                          Transferrable Skills Training, and Academic Writing instruction in 
+                          Ukraine‘s regions /DocHub/”</span></div>
+                        <img class="forecast_block_two" src="./img/ErasmusUA.svg" alt="">
                     </div>
                     <div class="projects_container_card">
-                        3
+                      <div class="forecast_three"><span>Проєкт LINK (ОOH – США)</span></div>
+                      <img class="forecast_block_three" src="./img/ProjectOON.svg" alt="">
                     </div>
                     <div class="projects_container_card">
-                        4
+                      <div class="forecast_four"><span>Дослідницький проєкт Міжнародного 
+                        торговельного центру ООН та СОТ</span></div>
+                      <img class="forecast_block_four" src="./img/CentreOON.svg" alt="">
                     </div>
                 </div>
                 <div class="projects_all_link">
@@ -233,9 +322,56 @@
             </section>
         </main>
         <footer class="footer">
-            <div class="footer_container">
+          <div class="footer_container">
+            <div>
+              <nav>
+                <ul>
+                  <li><a href="#"><img src="./img/footer_frame.svg"></a></li>
+                  <li><a href="tel:044 280 1234">044 280 1234</a></li>
+                  <li><a href="tel:044 280 88 69">Факс 044 280 88 69</a></li>
+                  <li><a href="mailto:gvm@ief.org.ua">gvm@ief.org.ua</a></li>
+                  <li><a href="#"> вул. Панаса Мирного, 26, Київ, 01011</a></li>
+                  <form action="">
 
+                  </form>
+                 <div class="social_networks">
+
+                 </div>
+                </ul>
+              </nav>
             </div>
+            <div>
+              <nav>
+                <ul>
+                  <li><a href="#">До уваги</a></li>
+                  <li><a href="#">...</a></li>
+                  <li><a href="#">...</a></li>
+                </ul>
+              </nav>
+            </div>
+            
+
+            <div>
+              <nav>
+                <ul>
+                  <li><a href="#">Медіапростір</a></li>
+                  <li><a href="#">...</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div>
+              <nav>
+                <ul>
+                  <li><a href="#">Корисна інформація</a></li>
+                  <li><a href="#">...</a></li>
+                  <li><a href="#">...</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+            
+            <p>&copy; 2023 My Website. All rights reserved.</p>
         </footer>
+      <script src="./javaScript/main.js" defer></script>
 </body>
 </html>
